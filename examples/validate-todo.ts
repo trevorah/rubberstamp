@@ -3,7 +3,7 @@ import * as v from "../src";
 const validateTodo = v.objectOf({
   id: v.string,
   title: v.string,
-  completed: v.boolean
+  completed: v.vBoolean
 });
 
 try {

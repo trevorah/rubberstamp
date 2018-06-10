@@ -1,5 +1,5 @@
-import { createValidator } from "../validator";
+import { createValidator, Validator } from "../validator";
 
 const isString = (input: any): input is string => typeof input === "string";
 
-export default createValidator("string", isString);
+export const vString: Validator<string> = createValidator("string", isString);

@@ -1,5 +1,7 @@
-import Validator from "../validator";
-import validateNull from "../basic/null";
-import unionOf from "./union-of";
+import { Validator } from "../validator";
 
-export default <T>(validator: Validator<T>) => unionOf(validator, validateNull);
+import { vNull } from "../basic/null";
+import { unionOf } from "./union-of";
+
+export const nullableOf = <T>(validator: Validator<T>) =>
+  unionOf(validator, vNull);

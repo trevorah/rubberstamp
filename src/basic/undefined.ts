@@ -1,5 +1,8 @@
-import { createValidator } from "../validator";
+import { createValidator, Validator } from "../validator";
 
 const isUndefined = (input: any): input is undefined => input === undefined;
 
-export default createValidator("undefined", isUndefined);
+export const vUndefined: Validator<undefined> = createValidator(
+  "undefined",
+  isUndefined
+);

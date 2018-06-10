@@ -1,5 +1,6 @@
-import Validator from "../validator";
-import validateObject from "../basic/object";
+import { Validator } from "../validator";
+
+import { vObject } from "../basic/object";
 import ValidationError, { getErrorProps } from "../validation-error";
 
 type ObjectOfGuardians = {
@@ -10,11 +11,11 @@ type ObjectOfReturnTypes<T extends ObjectOfGuardians> = {
   [K in keyof T]: ReturnType<T[K]>
 };
 
-export default <T extends ObjectOfGuardians>(
+export const objectOf = <T extends ObjectOfGuardians>(
   Guardians: T
 ): Validator<ObjectOfReturnTypes<T>> => {
   return input => {
-    const inputObject = validateObject(input);
+    const inputObject = vObject(input);
     let results = {} as ObjectOfReturnTypes<T>;
 
     Object.keys(Guardians).forEach((key, index) => {

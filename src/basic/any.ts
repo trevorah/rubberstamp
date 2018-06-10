@@ -1,5 +1,5 @@
-import { createValidator } from "../validator";
+import { createValidator, Validator } from "../validator";
 
 const isAny = (input: any): input is any => true;
 
-export default createValidator("any", isAny);
+export const vAny: Validator<any> = createValidator("any", isAny);

@@ -1,9 +1,9 @@
-import * as g from "../src";
+import { vString, vNumber, vBoolean, objectOf, nullableOf } from "../src";
 
-const testValidator = g.objectOf({
-  cat: g.string,
-  dog: g.number,
-  fish: g.nullableOf(g.boolean)
+const testValidator = objectOf({
+  cat: vString,
+  dog: vNumber,
+  fish: nullableOf(vBoolean)
 });
 
 test("validates simple object", () =>

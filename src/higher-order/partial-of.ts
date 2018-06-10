@@ -1,6 +1,7 @@
-import Validator from "../validator";
-import validateUndefined from "../basic/undefined";
-import unionOf from "./union-of";
+import { Validator } from "../validator";
 
-export default <T>(validator: Validator<T>) =>
-  unionOf(validator, validateUndefined);
+import { vUndefined } from "../basic/undefined";
+import { unionOf } from "./union-of";
+
+export const partialOf = <T>(validator: Validator<T>) =>
+  unionOf(validator, vUndefined);

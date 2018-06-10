@@ -1,6 +1,6 @@
-import * as g from "../src";
+import { arrayOf, vString } from "../src";
 
-const testValidator = g.arrayOf(g.string);
+const testValidator = arrayOf(vString);
 
 test("validates simple array", () =>
   expect(testValidator(["hello", "world"])).toEqual(["hello", "world"]));

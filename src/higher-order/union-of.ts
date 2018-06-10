@@ -1,7 +1,8 @@
-import Validator from "../validator";
+import { Validator } from "../validator";
+
 import ValidationError, { getErrorProps } from "../validation-error";
 
-export default <A, B>(
+export const unionOf = <A, B>(
   guardianA: Validator<A>,
   guardianB: Validator<B>
 ): Validator<A | B> => input => {

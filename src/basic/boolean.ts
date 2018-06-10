@@ -1,5 +1,8 @@
-import { createValidator } from "../validator";
+import { createValidator, Validator } from "../validator";
 
 const isBoolean = (input: any): input is boolean => typeof input === "boolean";
 
-export default createValidator("boolean", isBoolean);
+export const vBoolean: Validator<boolean> = createValidator(
+  "boolean",
+  isBoolean
+);

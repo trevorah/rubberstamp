@@ -1,6 +1,6 @@
-import * as g from "../src";
+import { vNumber, vString, unionOf } from "../src";
 
-const testValidator = g.unionOf(g.string, g.number);
+const testValidator = unionOf(vString, vNumber);
 
 test("validates first option", () =>
   expect(testValidator("hello")).toBe("hello"));

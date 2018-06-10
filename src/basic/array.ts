@@ -1,5 +1,5 @@
-import { createValidator } from "../validator";
+import { createValidator, Validator } from "../validator";
 
 const isArray = (input: any): input is Array<any> => Array.isArray(input);
 
-export default createValidator("Array", isArray);
+export const vArray: Validator<Array<any>> = createValidator("Array", isArray);
