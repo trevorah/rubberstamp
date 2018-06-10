@@ -1,10 +1,38 @@
-# ts-guardian
+# rubberstamp
+
+Refine and validate `any` with the minimum of effort.
+
+```ts
+import * as v from "rubberstamp";
+
+const validateTodo = v.objectOf({
+  id: v.string,
+  title: v.string,
+  completed: v.boolean
+});
+
+try {
+  const todo = validateTodo({
+    id: "123xyz",
+    title: "get eggs",
+    completed: false
+  });
+  // todo has the type:
+  // {
+  //   id: string;
+  //   title: string;
+  //   completed: boolean;
+  // }
+} catch (e) {
+  console.error(e);
+}
+```
 
 Automagically adds typings and validates inputs.
 
 ```ts
 import fetch from "node-fetch";
-import * as g from "ts-guardian";
+import * as v from "rubberstamp";
 
 // [
 //   {
